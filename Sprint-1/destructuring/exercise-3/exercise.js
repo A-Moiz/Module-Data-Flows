@@ -6,3 +6,15 @@ let order = [
   { itemName: "Hot Coffee", quantity: 2, unitPricePence: 100 },
   { itemName: "Hash Brown", quantity: 4, unitPricePence: 40 },
 ];
+
+function orderReceipt({ quantity, itemName, unitPricePence }) {
+  let total = ((unitPricePence * quantity) / 100).toFixed(2);
+  console.log(
+    String(quantity).padEnd(9),
+    itemName.padEnd(18),
+    total.padEnd(20)
+  );
+}
+
+console.log("QTY".padEnd(10) + "ITEM".padEnd(20) + "TOTAL".padEnd(20));
+order.forEach(orderReceipt);
